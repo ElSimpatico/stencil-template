@@ -14,12 +14,14 @@
         "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx --quiet --fix --format stylish --color",
         "postinstall": "husky install",
         "prepack": "pinst --disable",
-        "postpack": "pinst --enable"
+        "postpack": "pinst --enable",
+        "test": "stencil test --spec"
     },
     "devDependencies": {
         "@commitlint/cli": "^16.2.3",
         "@commitlint/config-conventional": "^16.2.1",
         "@stencil/eslint-plugin": "^0.4.0",
+        "@types/jest": "^27.4.1",
         "@typescript-eslint/eslint-plugin": "^5.20.0",
         "@typescript-eslint/parser": "^5.20.0",
         "eslint": "^8.14.0",
@@ -27,6 +29,7 @@
         "eslint-plugin-prettier": "^4.0.0",
         "eslint-plugin-react": "^7.29.4",
         "husky": "^7.0.4",
+        "jest": "^27.5.1",
         "lint-staged": "^12.4.0",
         "pinst": "^3.0.0",
         "prettier": "^2.6.2",
