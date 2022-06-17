@@ -16,6 +16,23 @@ module.exports = {
         // You can change the configuration based on that.
         // 'PRODUCTION' is used when building the static version of storybook.
 
+        const tsxRule = config.module.rules.find((rule) =>
+            'a.tsx'.match(rule.test),
+        );
+
+        if (tsxRule) {
+            const options = tsxRule.use[0].options;
+            options.plugins = [
+                [
+                    '@babel/plugin-transform-react-jsx',
+                    {
+                        prgama: 'h',
+                    },
+                ],
+                ...options.plugins,
+            ];
+        }
+
         // Make whatever fine-grained changes you need
         config.module.rules.push({
             test: /\.scss$/,
